@@ -1,19 +1,30 @@
 /**
  * 西南大学校情题库 · 适配 my-school.js
  *
- * 用法：
- *   1. 将此文件完整复制并保存为 my-school.js（与 index.html 放同一目录）
- *   2. 网页会自动加载该文件，题库中将自动出现西南大学校情板块
+ * 用法（3 步）：
+ *   1. 把这个文件复制一份，重命名为 my-school.js（和 index.html 放在同一层）
+ *   2. 按下面格式替换成你自己学校的题目：校训、建校年份、校史大事、著名科学家校友、现任校长院士等
+ *   3. 刷新网页 —— 页面会自动加载 my-school.js，"校情题"分区自动出现
+ *
+ * 为什么要单独一个文件：
+ *   主仓库只放各校通用的科学家普适题。校情题每校不同，放这会污染题库；
+ *   拆出来之后，你 fork 的项目永远能干净地合并上游的普适题更新。
+ *
+ * 字段说明：
+ *   id      唯一编号，建议用 x01 / x02… 避免和普适题冲突
+ *   type    single 单选 | multiple 多选 | fill 填空 | flash 简答闪卡
+ *   section 固定写 "school"
+ *   source  题源标注（校史馆 / 学校官网 / 往年回忆卷…）
  */
 window.MY_SCHOOL_META = {
   name: "西南大学",
-  tip: "已载入西南大学专属校情题库，包含完整的校史沿革与杰出校友考点！"
+  tip: "已载入西南大学完整专属校情题库（含单选、多选、填空与闪卡）！"
 };
 
 window.MY_SCHOOL_BANK = [
   // ==================== 单选题 ====================
   { 
-    id: "swu_s01", 
+    id: "x01", 
     type: "single", 
     section: "school", 
     source: "西南大学校史",
@@ -28,7 +39,7 @@ window.MY_SCHOOL_BANK = [
     note: "西南大学肇始于1906年4月18日创立的“官立川东师范学堂”，开重庆新学之先河。" 
   },
   { 
-    id: "swu_s02", 
+    id: "x02", 
     type: "single", 
     section: "school", 
     source: "西南大学校史",
@@ -40,10 +51,10 @@ window.MY_SCHOOL_BANK = [
       "川东共立师范学校校长"
     ],
     answer: 0,
-    note: "1906年，在“清末新政”改革学制、重视师范教育的形势下，由四川省川东道道尹张振兹倡议，官立川东师范学堂在重庆诞生。" 
+    note: "1906年，在清末新政改革学制、重视师范教育的形势下，由四川省川东道道尹张振兹倡议，官立川东师范学堂在重庆诞生。" 
   },
   { 
-    id: "swu_s03", 
+    id: "x03", 
     type: "single", 
     section: "school", 
     source: "西南大学校史",
@@ -58,7 +69,7 @@ window.MY_SCHOOL_BANK = [
     note: "1933年，原川东师范学堂几经更名后的“川东共立师范学校”开办的乡村师范专修科与中心试验农场组建为四川乡村建设学院。" 
   },
   { 
-    id: "swu_s04", 
+    id: "x04", 
     type: "single", 
     section: "school", 
     source: "西南大学校史",
@@ -73,7 +84,7 @@ window.MY_SCHOOL_BANK = [
     note: "1936年，四川乡村建设学院改建为四川省立教育学院，初期设置乡村教育系和农事教育系。" 
   },
   { 
-    id: "swu_s05", 
+    id: "x05", 
     type: "single", 
     section: "school", 
     source: "西南大学校史",
@@ -88,7 +99,7 @@ window.MY_SCHOOL_BANK = [
     note: "1950年，四川省立教育学院的教育、国文、外文、史地、数学等系与1940年成立的国立女子师范学院合并建立西南师范学院。" 
   },
   { 
-    id: "swu_s06", 
+    id: "x06", 
     type: "single", 
     section: "school", 
     source: "西南大学校史",
@@ -103,7 +114,7 @@ window.MY_SCHOOL_BANK = [
     note: "1950年，四川省立教育学院的农艺、园艺和农产制造等系与1946年创办的私立相辉学院等合并组建西南农学院。" 
   },
   { 
-    id: "swu_s07", 
+    id: "x07", 
     type: "single", 
     section: "school", 
     source: "西南大学校史",
@@ -118,7 +129,7 @@ window.MY_SCHOOL_BANK = [
     note: "1952年，川东行署撤销，主政西南局的邓小平同志决定“最好的地方应该拿来办教育”，两校迁至北碚原川东行署办公地。" 
   },
   { 
-    id: "swu_s08", 
+    id: "x08", 
     type: "single", 
     section: "school", 
     source: "西南大学组建历史",
@@ -133,7 +144,7 @@ window.MY_SCHOOL_BANK = [
     note: "2005年7月，西南师范大学与西南农业大学合并组建为西南大学，同年被确定为国家“211工程”重点建设高校。" 
   },
   { 
-    id: "swu_s09", 
+    id: "x09", 
     type: "single", 
     section: "school", 
     source: "西南大学文化标识",
@@ -148,7 +159,7 @@ window.MY_SCHOOL_BANK = [
     note: "“含弘光大，继往开来”为西南大学校训；“特立西南，学行天下”为大学精神。" 
   },
   { 
-    id: "swu_s10", 
+    id: "x10", 
     type: "single", 
     section: "school", 
     source: "西南大学文化标识",
@@ -163,7 +174,7 @@ window.MY_SCHOOL_BANK = [
     note: "1928年，时任川东师范学校校长的甘绩镛先生题写了“含弘光大，继往开来”的校训。" 
   },
   { 
-    id: "swu_s11", 
+    id: "x11", 
     type: "single", 
     section: "school", 
     source: "西南大学校训考点",
@@ -178,7 +189,7 @@ window.MY_SCHOOL_BANK = [
     note: "“含弘光大”语出《周易》第二章《坤》：“坤厚载物，德合无疆。含弘光大，品物咸亨。”" 
   },
   { 
-    id: "swu_s12", 
+    id: "x12", 
     type: "single", 
     section: "school", 
     source: "西南大学杰出校友",
@@ -193,7 +204,7 @@ window.MY_SCHOOL_BANK = [
     note: "1949年，袁隆平考入私立相辉学院农艺系，后随并入西南农学院。" 
   },
   { 
-    id: "swu_s13", 
+    id: "x13", 
     type: "single", 
     section: "school", 
     source: "西南大学杰出校友",
@@ -208,7 +219,7 @@ window.MY_SCHOOL_BANK = [
     note: "吴明珠院士是袁隆平院士的同学，1949年考入西南农学院果蔬专业，被誉为“西部瓜王”。" 
   },
   { 
-    id: "swu_s14", 
+    id: "x14", 
     type: "single", 
     section: "school", 
     source: "西南大学院士风采",
@@ -223,7 +234,7 @@ window.MY_SCHOOL_BANK = [
     note: "向仲怀，中国工程院院士，是我国蚕学界唯一的院士，1958年在西南大学任教，扎根六十余载。" 
   },
   { 
-    id: "swu_s15", 
+    id: "x15", 
     type: "single", 
     section: "school", 
     source: "西南大学院士风采",
@@ -238,7 +249,7 @@ window.MY_SCHOOL_BANK = [
     note: "1935年7月，侯光炯代表中国出席在英国召开的第三届国际土壤学会，在世界上首次正式发表“水稻土”土类名称。" 
   },
   { 
-    id: "swu_s16", 
+    id: "x16", 
     type: "single", 
     section: "school", 
     source: "西南大学院士风采",
@@ -253,7 +264,7 @@ window.MY_SCHOOL_BANK = [
     note: "袁道先于1991年当选中国科学院院士，是我国第一位岩溶地质领域的院士，开创了“岩溶动力学”理论。" 
   },
   { 
-    id: "swu_s17", 
+    id: "x17", 
     type: "single", 
     section: "school", 
     source: "西南大学名人足迹",
@@ -268,7 +279,7 @@ window.MY_SCHOOL_BANK = [
     note: "西南大学附属小学的前身是“四川省立教育学院之附属嘉陵实验小学校”，丁肇中童年在此发蒙。" 
   },
   { 
-    id: "swu_s18", 
+    id: "x18", 
     type: "single", 
     section: "school", 
     source: "西南大学名人足迹",
@@ -283,7 +294,7 @@ window.MY_SCHOOL_BANK = [
     note: "丁肇中于1976年因发现J粒子而获得诺贝尔物理学奖。" 
   },
   { 
-    id: "swu_s19", 
+    id: "x19", 
     type: "single", 
     section: "school", 
     source: "西南大学重大科研",
@@ -300,7 +311,7 @@ window.MY_SCHOOL_BANK = [
 
   // ==================== 多选题 ====================
   { 
-    id: "swu_m01", 
+    id: "x20", 
     type: "multiple", 
     section: "school", 
     source: "西南大学校史多选",
@@ -316,7 +327,7 @@ window.MY_SCHOOL_BANK = [
     note: "以上均参与或构成了西南大学悠久办学历史中的重要前身与合并来源。" 
   },
   { 
-    id: "swu_m02", 
+    id: "x21", 
     type: "multiple", 
     section: "school", 
     source: "西南大学历史沿革多选",
@@ -332,7 +343,7 @@ window.MY_SCHOOL_BANK = [
     note: "全盘勾勒了西南大学从1906年到2005年合并组建的完整历史轨迹。" 
   },
   { 
-    id: "swu_m03", 
+    id: "x22", 
     type: "multiple", 
     section: "school", 
     source: "西南大学文化标识多选",
@@ -348,7 +359,7 @@ window.MY_SCHOOL_BANK = [
     note: "“特立西南，学行天下”、“杏坛育人，劝课农桑”与“生于西南，立于西南”共同构成了大学精神内涵；含弘光大为校训。" 
   },
   { 
-    id: "swu_m04", 
+    id: "x23", 
     type: "multiple", 
     section: "school", 
     source: "西南大学校训与精神",
@@ -364,7 +375,7 @@ window.MY_SCHOOL_BANK = [
     note: "涵盖了校训和大学精神的题写者、出处及核心内涵。" 
   },
   { 
-    id: "swu_m05", 
+    id: "x24", 
     type: "multiple", 
     section: "school", 
     source: "西南大学杰出校友多选",
@@ -380,7 +391,7 @@ window.MY_SCHOOL_BANK = [
     note: "在西南农学院20世纪50年代的毕业生中，袁隆平、吴明珠、向仲怀三人成就极其突出，被称为“三剑客”。" 
   },
   { 
-    id: "swu_m06", 
+    id: "x25", 
     type: "multiple", 
     section: "school", 
     source: "西南大学杰出校友",
@@ -396,7 +407,7 @@ window.MY_SCHOOL_BANK = [
     note: "袁隆平学习的是农学/水稻专业，并非蚕桑专业，其余各项均符合史实。" 
   },
   { 
-    id: "swu_m07", 
+    id: "x26", 
     type: "multiple", 
     section: "school", 
     source: "西南大学杰出校友",
@@ -412,7 +423,7 @@ window.MY_SCHOOL_BANK = [
     note: "向仲怀院士并未获得诺贝尔奖，其余均为其在蚕学领域的卓越贡献。" 
   },
   { 
-    id: "swu_m08", 
+    id: "x27", 
     type: "multiple", 
     section: "school", 
     source: "西南大学杰出校友",
@@ -428,7 +439,7 @@ window.MY_SCHOOL_BANK = [
     note: "吴明珠院士未获得诺贝尔奖，其余各项准确无误。" 
   },
   { 
-    id: "swu_m09", 
+    id: "x28", 
     type: "multiple", 
     section: "school", 
     source: "西南大学名人名师",
@@ -444,7 +455,7 @@ window.MY_SCHOOL_BANK = [
     note: "我国第一位岩溶地质领域的院士是袁道先，不是侯光炯。" 
   },
   { 
-    id: "swu_m10", 
+    id: "x29", 
     type: "multiple", 
     section: "school", 
     source: "西南大学名人足迹",
@@ -460,7 +471,7 @@ window.MY_SCHOOL_BANK = [
     note: "1949年考入私立相辉学院农艺系的是袁隆平，丁肇中为附小发蒙校友并荣获诺奖。" 
   },
   { 
-    id: "swu_m11", 
+    id: "x30", 
     type: "multiple", 
     section: "school", 
     source: "西南大学名师荟萃",
@@ -478,7 +489,7 @@ window.MY_SCHOOL_BANK = [
 
   // ==================== 填空题 ====================
   { 
-    id: "swu_f01", 
+    id: "x31", 
     type: "fill", 
     section: "school", 
     source: "西南大学校庆日",
@@ -488,17 +499,27 @@ window.MY_SCHOOL_BANK = [
     note: "1906年4月18日，“官立川东师范学堂”创立，学校将4月18日定为校庆日。" 
   },
   { 
-    id: "swu_f02", 
+    id: "x32", 
     type: "fill", 
     section: "school", 
     source: "西南大学校训",
-    question: "西南大学的校训是「______」。",
+    question: "我校的校训是「______」。",
     answer: "含弘光大，继往开来",
     keywords: ["含弘光大", "继往开来"],
-    note: "由1928年时任川东师范学校校长甘绩镛先生所题，语出《周易》与《朱子全书》。" 
+    note: "由1928年时任川东师范学校校长甘绩镛先生所题，语出《周易》与《朱子全书》。校训是最容易出的填空题，务必一字不差背下来。" 
   },
   { 
-    id: "swu_f03", 
+    id: "x33", 
+    type: "fill", 
+    section: "school", 
+    source: "西南大学历史溯源",
+    question: "我校创建于______年。",
+    answer: "1906",
+    keywords: ["1906"],
+    note: "西南大学最早的办学渊源可追溯到1906年4月18日创立的官立川东师范学堂。很多学校会考建校周年：今年年份 − 建校年份 = 校庆周年数。" 
+  },
+  { 
+    id: "x34", 
     type: "fill", 
     section: "school", 
     source: "西南大学大学精神",
@@ -508,17 +529,7 @@ window.MY_SCHOOL_BANK = [
     note: "“特立西南，学行天下”是西南大学百年办学孕育的独特大学精神。" 
   },
   { 
-    id: "swu_f04", 
-    type: "fill", 
-    section: "school", 
-    source: "西南大学历史溯源",
-    question: "西南大学最早的办学渊源可追溯到光绪三十二年（______年）创办的川东师范学堂。",
-    answer: "1906",
-    keywords: ["1906"],
-    note: "川东师范学堂是重庆第一所新式师范学校。" 
-  },
-  { 
-    id: "swu_f05", 
+    id: "x35", 
     type: "fill", 
     section: "school", 
     source: "西南大学名人足迹",
@@ -530,27 +541,27 @@ window.MY_SCHOOL_BANK = [
 
   // ==================== 简答闪卡 ====================
   { 
-    id: "swu_c01", 
+    id: "x36", 
+    type: "flash", 
+    section: "school", 
+    source: "西南大学历史与特色",
+    question: "请用 1 分钟介绍我校的办学历史与特色学科。",
+    answer: "① 建校背景与时间：肇始于1906年创立的官立川东师范学堂，2005年由西南师范大学与西南农业大学合并组建；② 优势学科：以教师教育、农业科学为显著特色；③ 标志性成果：在家蚕基因组研究等领域取得世界级突破，相关成果曾多次在国际顶级期刊《科学》（Science）上发表。" 
+  },
+  { 
+    id: "x37", 
+    type: "flash", 
+    section: "school", 
+    source: "西南大学服务国家战略",
+    question: "我校在服务国家战略方面有哪些代表性成果？",
+    answer: "学校培养出了以袁隆平（杂交水稻之父）、向仲怀（蚕学泰斗）、吴明珠（西部瓜王）等为代表的一大批杰出科学家，长期扎根农学、生物学及教师教育一线，在保障国家粮食安全、推动特色农业现代化及西部基础教育发展方面作出了历史性贡献。" 
+  },
+  { 
+    id: "x38", 
     type: "flash", 
     section: "school", 
     source: "西南大学历史沿革综合",
     question: "简述西南大学从1906年至2005年的主要历史沿革。",
     answer: "1906年，官立川东师范学堂创立。1933年发展为四川乡村建设学院，1936年改建为四川省立教育学院。1950年分设重组：师范方向与国立女子师范学院合并组建西南师范学院；农科方向与私立相辉学院等合并组建西南农学院。1985年分别更名为西南师范大学、西南农业大学。2001年西南农业大学合并四川畜牧兽医学院和中国农业科学院柑桔研究所。2005年7月，西南师范大学与西南农业大学合并组建为西南大学。" 
-  },
-  { 
-    id: "swu_c02", 
-    type: "flash", 
-    section: "school", 
-    source: "西南大学杰出校友综合",
-    question: "请列举西南大学培养的著名科学家校友（如袁隆平、向仲怀、吴明珠），并简要说明其核心贡献。",
-    answer: "① 袁隆平：中国工程院院士，“杂交水稻之父”，1949年就读于私立相辉学院（西南大学前身）农艺系，为解决中国和世界粮食问题作出巨大贡献；② 向仲怀：中国工程院院士，我国蚕学界唯一院士，长期扎根母校，主导绘制世界第一张家蚕基因组框架图；③ 吴明珠：中国工程院院士，“西部瓜王”，1949年考入西南农学院果蔬专业，扎根新疆戈壁数十年培育出30余个瓜类品种。" 
-  },
-  { 
-    id: "swu_c03", 
-    type: "flash", 
-    section: "school", 
-    source: "西南大学科研与特色",
-    question: "西南大学在生物学与农业科学领域的标志性世界级科研成果是什么？",
-    answer: "家蚕基因组研究。西南大学团队主导的家蚕基因组及重测序研究成果曾先后两次在国际顶级学术期刊《科学》（Science）上发表，奠定了学校在蚕学领域的全球领跑地位。" 
   }
 ];
